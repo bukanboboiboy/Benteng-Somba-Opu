@@ -2,10 +2,10 @@
 
 /* --- 1. Konfigurasi Warna & Font Dasar --- */
 :root {
-  --primary-brown: #5D4037; /* Coklat tua untuk teks dan navbar */
+  --primary-brown: #5C4033; /* Coklat tua untuk teks dan navbar */
   --secondary-brown: #795548; /* Coklat medium */
-  --accent-red: #B71C1C;      /* Merah marun sebagai aksen */
-  --background-light: #F5F5F5; /* Latar belakang abu-abu sangat muda */
+  --accent-red: #FFD700;      /* Merah marun sebagai aksen */
+  --background-light: #F5F5DC; /* Latar belakang abu-abu sangat muda */
   --card-background: #FFFFFF; /* Latar belakang kartu/konten */
   --font-heading: 'Lora', serif;
   --font-body: 'Montserrat', sans-serif;
@@ -117,10 +117,12 @@ h2, h3 {
 .hero-section {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1622384389142-3352a158b76c?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+  background:url('https://asset.kompas.com/crops/dG-Vcp1ujA6YHrnMag6nMPRd9MI=/0x81:1493x1077/780x390/data/photo/2023/09/19/650992a040d14.jpg') no-repeat center center/cover;
   /* Ganti URL di atas dengan gambar gerbang Somba Opu yang bagus */
   border-radius: 8px;
-  color: white;
+  color: var(--accent-red);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   margin-bottom: 2.5rem;
 }
 
