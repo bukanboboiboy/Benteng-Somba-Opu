@@ -1,38 +1,246 @@
+/* src/App.css */
+
+/* --- 1. Konfigurasi Warna & Font Dasar --- */
+:root {
+  --primary-brown: #5D4037; /* Coklat tua untuk teks dan navbar */
+  --secondary-brown: #795548; /* Coklat medium */
+  --accent-red: #B71C1C;      /* Merah marun sebagai aksen */
+  --background-light: #F5F5F5; /* Latar belakang abu-abu sangat muda */
+  --card-background: #FFFFFF; /* Latar belakang kartu/konten */
+  --font-heading: 'Lora', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--background-light);
+  color: var(--primary-brown);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 2. Styling Global & Container --- */
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.container {
+  flex: 1; /* Membuat konten utama mengisi ruang yang tersedia */
+  max-width: 1100px;
+  width: 90%;
+  margin: 2.5rem auto;
+  padding: 0;
+}
+
+h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* --- 3. Navbar Baru --- */
+.navbar {
+  background-color: var(--primary-brown);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  margin-left: 25px;
+}
+
+.navbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav a:hover {
+  color: #E0E0E0;
+  border-bottom-color: var(--accent-red);
+}
+
+/* Style untuk link yang aktif */
+.navbar-nav a.active {
+  color: #fff;
+  border-bottom-color: var(--accent-red);
+  font-weight: bold;
+}
+
+
+/* --- 4. Konten Halaman --- */
+.page-content {
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.page-content h2 {
+  color: var(--primary-brown);
+  border-bottom: 2px solid var(--accent-red);
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+/* --- 5. Halaman Beranda (Hero Section) --- */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1622384389142-3352a158b76c?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+  /* Ganti URL di atas dengan gambar gerbang Somba Opu yang bagus */
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 2.5rem;
+}
+
+.hero-section h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* --- 6. Galeri --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-card {
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-card h3 {
+  color: var(--secondary-brown);
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin: 0;
+}
+
+.gallery-card p {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  font-size: 0.95rem;
+  color: #616161;
+  line-height: 1.6;
+}
+
+/* --- 7. Video Section --- */
+.video-section {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 2rem;
+}
+
+.video-section:last-child {
+  border-bottom: none;
+}
+
+.video-section h3 {
+  color: var(--secondary-brown);
+  margin-bottom: 1rem;
+}
+
+video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- 8. Footer Baru --- */
+.footer {
+  background-color: var(--primary-brown);
+  color: #E0E0E0;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem; /* Memberi jarak dari konten di atasnya */
+}
+
+/* --- 9. Storytelling Page Styling --- */
+.storytelling-grid {
+  display: grid;
+  /* Membuat 2 kolom di layar medium, dan 3 di layar besar */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem; /* Jarak antar video */
+  margin-top: 2rem;
+  justify-items: center; /* Membuat kartu video center di dalam kolom grid */
+}
+
+.video-card {
+  width: 100%;
+  max-width: 350px; /* Batas lebar maksimal agar tidak terlalu besar */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.video-card h3 {
+  color: var(--secondary-brown);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.video-wrapper video {
+  width: 100%;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* KUNCI UTAMA: Memaksa elemen untuk punya rasio 9:16 */
+  aspect-ratio: 9 / 16;
+  
+  /* Ini akan memastikan poster/thumbnail mengisi area tanpa distorsi */
+  object-fit: cover; 
+  
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  background-color: #000;
+  display: block;
 }
