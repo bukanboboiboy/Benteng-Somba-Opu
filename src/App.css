@@ -43,9 +43,9 @@ h2, h3 {
 .navbar {
   background-color: var(--primary-brown);
   background-image: 
-    url('/public/assets/navbarr.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+    url('/public/assets/navbar-pattern.svg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -211,13 +211,15 @@ video {
 /* --- 8. Footer Baru --- */
 .footer {
   background-color: var(--primary-brown);
-  background-image: url('/public/assets/navbarr.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('/public/assets/navbar-pattern.svg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
   color: #E0E0E0;
   text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem; /* Memberi jarak dari konten di atasnya */
+  padding: 15px 30px;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 /* --- 9. Storytelling Page Styling --- */
